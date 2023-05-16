@@ -1,0 +1,52 @@
+﻿@model IEnumerable<PMS.Entities.Models.MainPage>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Areas/ManagementPanel/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Ana Sayfa</h1>
+
+<a class="btn btn-primary" href="@Url.Action("Create", "MainPages")">Yeni Ekle</a>
+
+<hr />
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Resim
+            </th>
+            <th>
+                Başlık
+            </th>
+            <th>
+                Duyuru
+            </th>
+            <th>
+                Açıklama
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                <img decoding="async" src="@item.ImageUrl" width="100px" asp-append-version="true" />
+            </td>
+            <td>
+                @item.Title
+            </td>
+            <td>
+                @item.Notice
+            </td>
+            <td>
+                @item.Description
+            </td>
+                <td>
+                    <a class="btn btn-warning" href="@Url.Action("Edit", "MainPages", new{id = item.MainPageId})">Düzenle</a>
+                </td>
+        </tr>
+}
+    </tbody>
+</table>

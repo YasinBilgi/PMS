@@ -1,0 +1,57 @@
+﻿@model IEnumerable<PMS.Entities.Models.User>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Areas/ManagementPanel/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Kullanıcılar</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table table-responsive">
+    <thead>
+        <tr>
+            <th>
+                Id
+            </th>
+            <th>
+                Adı Soyadı
+            </th>
+            <th>
+                Telefon
+            </th>
+            <th>
+                Durumu
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <th>
+                <input class="userid" type="number" value="@item.UserId">
+            </th>
+            <th>
+                    @item.FirstName @item.LastName
+            </th>
+            <th>
+                @item.Phone
+            </th>
+            <th>
+                @if (item.Status)
+                {
+                     <input class="userstatus" type="checkbox" checked>   
+                }
+                else
+                {
+                    <input class="userstatus" type="checkbox">
+                }
+            </th>
+           
+        </tr>
+}
+    </tbody>
+</table>

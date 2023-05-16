@@ -1,0 +1,35 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+
+<!-- Mirrored from codervent.com/syndash/demo/vertical/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 06 Mar 2021 13:20:51 GMT -->
+<head>
+	@Html.Partial("_Head")
+</head>
+
+<body>
+	<div class="wrapper">
+		@Html.Partial("_Sidebar")
+
+		@Html.Partial("_Header")
+
+		<div class="page-wrapper">
+			<div class="page-content-wrapper">
+				<div class="page-content">
+					@RenderBody()
+				</div>
+			</div>
+		</div>
+		
+		<div class="overlay toggle-btn-mobile"></div>
+	    <a href="javaScript:;" class="back-to-top"><i class='bx bxs-up-arrow-alt'></i></a>
+		
+		@Html.Partial("_Footer")
+	</div>
+	@Html.Partial("_Scripts")
+	
+</body>
+
+
+<!-- Mirrored from codervent.com/syndash/demo/vertical/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 06 Mar 2021 13:20:53 GMT -->
+</html>

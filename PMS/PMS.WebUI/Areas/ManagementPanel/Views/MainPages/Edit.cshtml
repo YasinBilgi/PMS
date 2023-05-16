@@ -1,0 +1,55 @@
+﻿@model PMS.Entities.Models.MainPage
+
+@{
+    ViewData["Title"] = "Edit";
+    Layout = "~/Areas/ManagementPanel/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Düzenle</h1>
+
+@using (Html.BeginForm("Edit", "MainPages", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    @Html.AntiForgeryToken()
+    <div class="form-horizontal">
+        @Html.ValidationSummary(true, "", new {@class="text-danger"})
+        @Html.HiddenFor(model => model.MainPageId)
+
+        <label class="control-label col-md-2">Resim</label>
+        @*İmage*@
+        <div class="form-group">
+            @*  @Html.LabelFor(model => model.İmageUrl, htmlAttributes: new {@class = "control-label col-md-2"})*@
+
+            <div class="col-md-10">
+                <input type="file" accept="image/*" name="img" id="img" />
+            </div>
+        </div>
+
+        <label class="control-label col-md-2">Başlık</label>
+        <div class="form-group">
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Title, new {htmlAttibutes = new {@class = "form-control"}})
+                @Html.ValidationMessageFor(model => model.Title, "", new {@Classs = "text-danger"})
+            </div>
+        </div>
+
+        <label class="control-label col-md-2">Duyuru</label>
+        <div class="form-group">
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Notice, new {htmlAttibutes = new {@class = "form-control"}})
+                @Html.ValidationMessageFor(model => model.Notice, "", new {@Classs = "text-danger"})
+            </div>
+        </div>
+
+        <label class="control-label col-md-2">Açıklama</label>
+        <div class="form-group">
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Description, new {htmlAttibutes = new {@class = "form-control"}})
+                @Html.ValidationMessageFor(model => model.Description, "", new {@Classs = "text-danger"})
+            </div>
+        </div>
+
+        <br />
+        <input type="submit" value="Kaydet" class="btn btn-primary" />
+    </div>
+}
+

@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.3.32901.215
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PMS.Entities", "PMS.Entities\PMS.Entities.csproj", "{20F19A2A-B2D5-4B0D-A99A-8E22D7918B71}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PMS.WebUI", "PMS.WebUI\PMS.WebUI.csproj", "{68C7C420-05F8-4167-8BF8-1F1451E35DC6}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{20F19A2A-B2D5-4B0D-A99A-8E22D7918B71}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{20F19A2A-B2D5-4B0D-A99A-8E22D7918B71}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{20F19A2A-B2D5-4B0D-A99A-8E22D7918B71}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{20F19A2A-B2D5-4B0D-A99A-8E22D7918B71}.Release|Any CPU.Build.0 = Release|Any CPU
+		{68C7C420-05F8-4167-8BF8-1F1451E35DC6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{68C7C420-05F8-4167-8BF8-1F1451E35DC6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{68C7C420-05F8-4167-8BF8-1F1451E35DC6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{68C7C420-05F8-4167-8BF8-1F1451E35DC6}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {FA5427DF-E975-4B55-9F0E-1D969D017C06}
+	EndGlobalSection
+EndGlobal

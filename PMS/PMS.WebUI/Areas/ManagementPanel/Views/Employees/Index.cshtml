@@ -1,0 +1,60 @@
+﻿@model IEnumerable<PMS.Entities.Models.Employee>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Areas/ManagementPanel/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Çalışanlar</h1>
+
+<a class="btn btn-primary" href="@Url.Action("Create", "Employees")">Yeni Ekle</a>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Adı
+            </th>
+            <th>
+                Soy Adı
+            </th>
+            <th>
+                Telefon
+            </th>
+            <th>
+                Email
+            </th>
+            <th>
+                Mağaza
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @item.FirstName
+            </td>
+            <td>
+                @item.LastName
+            </td>
+            <td>
+                @item.Phone
+            </td>
+            <td>
+                @item.Email
+            </td>
+            <td>
+                @item.Store.Address
+            </td>
+                <td>
+                    <a class="btn btn-danger" href="@Url.Action("Details", "Employees", new{id = item.StoreId})">Detay</a>
+                </td>
+                <td>
+                    <a class="btn btn-warning" href="@Url.Action("Edit", "Employees", new{id = item.StoreId})">Düzenle</a>
+                </td>
+        </tr>
+}
+    </tbody>
+</table>

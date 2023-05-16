@@ -1,0 +1,35 @@
+﻿@model PMS.WebUI.Models.LoginViewModel
+@{
+    ViewData["Title"] = "Login";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Giriş Yap</h1>
+
+<p class="text-danger">@ViewBag.Message</p>
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    <div class="form-horizontal">
+        @Html.ValidationSummary(true, "", new {@class="text-danger"})
+
+        <label class="control-label col-md-2">Email</label>
+        <div class="form-group">
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Email,new { htmlAttributes= new {@class="form-control", @type="email"} })
+                @Html.ValidationMessageFor(model => model.Email, "", new {@class="text-danger"})
+            </div>
+        </div>
+
+        <label class="control-label col-md-2">Şifre</label>
+        <div class="form-group">
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Password,new { htmlAttributes= new {@class="form-control", @type="password"} })
+                @Html.ValidationMessageFor(model => model.Password, "", new {@class="text-danger"})
+            </div>
+        </div>
+
+        <br />
+        <input type="submit" value="Giriş Yap" class="btn btn-primary" />
+    </div>
+}

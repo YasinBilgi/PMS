@@ -1,0 +1,59 @@
+﻿@model PMS.Entities.Models.Store
+
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Areas/ManagementPanel/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Yeni Ekle</h1>
+
+@using (Html.BeginForm("Create", "Stores", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    @Html.AntiForgeryToken()
+    <div class="form-horizontal">
+        @Html.ValidationSummary(true, "", new {@class="text-danger"})
+
+        <label class="control-label col-md-2">Mağaza Adı</label>
+        <div class="form-group">
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Name, new {htmlAttibutes = new {@class = "form-control"}})
+                @Html.ValidationMessageFor(model => model.Name, "", new {@Classs = "text-danger"})
+            </div>
+        </div>
+
+        <label class="control-label col-md-2">Adres</label>
+        <div class="form-group">
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Address, new {htmlAttibutes = new {@class = "form-control"}})
+                @Html.ValidationMessageFor(model => model.Address, "", new {@Classs = "text-danger"})
+            </div>
+        </div>
+
+        <label class="control-label col-md-2">Telefon</label>
+        <div class="form-group">
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Phone, new {htmlAttibutes = new {@class = "form-control"}})
+                @Html.ValidationMessageFor(model => model.Phone, "", new {@Classs = "text-danger"})
+            </div>
+        </div>
+        <label class="control-label col-md-2">Email</label>
+        <div class="form-group">
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Email, new {htmlAttibutes = new {@class = "form-control"}})
+                @Html.ValidationMessageFor(model => model.Email, "", new {@Classs = "text-danger"})
+            </div>
+        </div>
+        <label class="control-label col-md-2">Müdür Email</label>
+        <div class="form-group">
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Manager.Email, new {htmlAttibutes = new {@class = "form-control"}})
+                @Html.ValidationMessageFor(model => model.Manager.Email, "", new {@Classs = "text-danger"})
+            </div>
+        </div>
+
+        <br />
+        <input type="submit" value="Kaydet" class="btn btn-primary" />
+        <br />
+    </div>
+}
+
